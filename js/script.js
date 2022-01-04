@@ -46,43 +46,43 @@ movieDB.movies.forEach((film, i) => {
     `;
 });
 
-// const movieList = document.getElementsByClassName("promo__interactive-item");
-// let movieArr = [];
-// for (let i = 0; i < movieList.length; i++){
-//     movieArr.push(movieList[i].innerHTML);
-// }
+const movieList = document.getElementsByClassName("promo__interactive-item");
+let movieArr = [];
+for (let i = 0; i < movieList.length; i++){
+    movieArr.push(movieList[i].innerHTML);
+}
 
-// for (let key of movieDB.movies){
-//     let isInList = -1;
-//     movieArr.forEach((item, index) => {
-//         if (item.indexOf(key.toUpperCase()) !== -1){
-//             isInList = index;
-//         }
-//     });
+for (let key of movieDB.movies){
+    let isInList = -1;
+    movieArr.forEach((item, index) => {
+        if (item.indexOf(key.toUpperCase()) !== -1){
+            isInList = index;
+        }
+    });
 
-//     if (isInList === -1){
-//         const list = document.querySelector(".promo__interactive-list");
-//         const li = document.createElement('li');
-//         li.classList.add("promo__interactive-item");
-//         li.textContent = key;
-//         list.append(li);
-//     }
-// }
+    if (isInList === -1){
+        const list = document.querySelector(".promo__interactive-list");
+        const li = document.createElement('li');
+        li.classList.add("promo__interactive-item");
+        li.textContent = key;
+        list.append(li);
+    }
+}
 
-// const movieListUpd = document.getElementsByClassName("promo__interactive-item");
-// movieArr.length = 0;
-// for (let i = 0; i < movieListUpd.length; i++){
-//     movieArr.push(movieListUpd[i].innerHTML);
-// }
-// movieArr.sort();
+const movieListUpd = document.getElementsByClassName("promo__interactive-item");
+movieArr.length = 0;
+for (let i = 0; i < movieListUpd.length; i++){
+    movieArr.push(movieListUpd[i].innerHTML);
+}
+movieArr.sort();
 
-// const list = document.querySelector(".promo__interactive-list");
-// list.innerHTML = "";
+const list = document.querySelector(".promo__interactive-list");
+list.innerHTML = "";
 
-// movieArr.forEach((item, index) => {
-//     const list = document.querySelector(".promo__interactive-list");
-//     const li = document.createElement('li');
-//     li.classList.add("promo__interactive-item");
-//     li.innerHTML = `${index+1} ${item} <div class='delete'></div>`;
-//     list.append(li);
-// });
+movieArr.forEach((item, index) => {
+    const list = document.querySelector(".promo__interactive-list");
+    const li = document.createElement('li');
+    li.classList.add("promo__interactive-item");
+    li.innerHTML = `${index+1} ${item} <div class='delete'></div>`;
+    list.append(li);
+});
